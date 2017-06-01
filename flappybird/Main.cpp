@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include <iostream>
 #include "Game.hpp"
 #include "DEFINITIONS.hpp"
