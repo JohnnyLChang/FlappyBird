@@ -28,9 +28,9 @@ namespace Sonar {
 	void Pipe::SpawnInvisiblePipe() {
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe Down"));
 		sprite.setPosition(_data->window.getSize().x, 0);
-		sprite.setColor(sf::Color(0, 0, 0, 0));
+		//sprite.setColor(sf::Color(0, 0, 0, 0));
 
-		_pipeSprites.push_back(sprite);
+		//_pipeSprites.push_back(sprite);
 	}
 
 	void Pipe::MovePipes(float dt) {

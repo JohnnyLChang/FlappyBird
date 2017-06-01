@@ -79,7 +79,15 @@ namespace Sonar {
 
 			std::vector<sf::Sprite> landSprites = land->GetSprites();
 			for (auto l : landSprites) {
-				if (collision.CheckSpriteCollision(bird->GetSprite(), l)) {
+				if (collision.CheckSpriteCollision(bird->GetSprite(), 0.7f, l, 1.0f )) {
+					std::cout << "collision with land" << std::endl;
+					_gameState = GameStates::eGameOver;
+				}
+			}
+
+			std::vector<sf::Sprite> pipeSprites = pipe->GetSprites();
+			for (auto p : pipeSprites) {
+				if (collision.CheckSpriteCollision(bird->GetSprite(), 0.8f, p, 0.8f)) {
 					_gameState = GameStates::eGameOver;
 				}
 			}
