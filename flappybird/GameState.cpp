@@ -5,7 +5,7 @@
 #include "GameOverState.hpp"
 #include "MainMenuState.hpp"
 #include "DEFINITIONS.hpp"
-
+#include "GameOverState.hpp"
 #include <iostream>
 
 namespace Sonar {
@@ -90,6 +90,7 @@ namespace Sonar {
 			for (auto l : landSprites) {
 				if (collision.CheckSpriteCollision(bird->GetSprite(), 0.7f, l, 1.0f )) {
 					_gameState = GameStates::eGameOver;
+					_clock.restart();
 				}
 			}
 
@@ -97,6 +98,7 @@ namespace Sonar {
 			for (auto p : pipeSprites) {
 				if (collision.CheckSpriteCollision(bird->GetSprite(), 0.8f, p, 0.8f)) {
 					_gameState = GameStates::eGameOver;
+					_clock.restart();
 				}
 			}
 
@@ -114,6 +116,9 @@ namespace Sonar {
 
 		if (GameStates::eGameOver == _gameState) {
 			flash->Show(dt);
+			if (_clock.getElapsedTime().asSeconds() > TIME_BEFORE_GAME_OVER_APPEARS) {
+				_data->machine.AddState(StateUptr(new GameOverState(_data)));
+			}
 		}
 	}
 
