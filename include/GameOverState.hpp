@@ -30,6 +30,7 @@ namespace Sonar {
 		sf::Sprite _gameOverTitle;
 		sf::Sprite _gameOverContainer;
 		sf::Sprite _retryButton;
+		sf::Sprite _medal;
 
 		sf::Text _scoreText;
 		sf::Text _highScoreText;

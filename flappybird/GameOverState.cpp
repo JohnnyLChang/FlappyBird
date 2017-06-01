@@ -48,6 +48,11 @@ namespace Sonar {
 		_data->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);
 		_data->assets.LoadTexture("Game Over Body", GAME_OVER_BODY_FILEPATH);
 
+		_data->assets.LoadTexture("Bronze Medal", BRONZE_MEDAL_FILEPATH);
+		_data->assets.LoadTexture("Silver Medal", SILVER_MEDAL_FILEPATH);
+		_data->assets.LoadTexture("Gold Medal", GOLD_MEDAL_FILEPATH);
+		_data->assets.LoadTexture("Platinum Medal", PLATINUM_MEDAL_FILEPATH);
+
 		_background.setTexture(this->_data->assets.GetTexture("Game Over Background"));
 		_gameOverTitle.setTexture(this->_data->assets.GetTexture("Game Over Title"));
 		_gameOverContainer.setTexture(this->_data->assets.GetTexture("Game Over Body"));
@@ -87,6 +92,21 @@ namespace Sonar {
 		_highScoreText.setPosition(
 			_data->window.getSize().x / 10 * 7.25,
 			_data->window.getSize().y / 1.78);
+
+		if (_score >= PLATINUM_MEDAL_SCORE) {
+			_medal.setTexture(this->_data->assets.GetTexture("Platinum Medal"));
+		}
+		else if (_score >= GOLD_MEDAL_SCORE) {
+			_medal.setTexture(this->_data->assets.GetTexture("Gold Medal"));
+		}
+		else if (_score >= SILVER_MEDAL_SCORE) {
+			_medal.setTexture(this->_data->assets.GetTexture("Silver Medal"));
+		}
+		else {
+			_medal.setTexture(this->_data->assets.GetTexture("Bronze Medal"));
+		}
+
+		_medal.setPosition(175, 465);
 	}
 
 	void GameOverState::HandleInput() {
@@ -115,6 +135,7 @@ namespace Sonar {
 		_data->window.draw(_retryButton);
 		_data->window.draw(_scoreText);
 		_data->window.draw(_highScoreText);
+		_data->window.draw(_medal);
 
 		_data->window.display();
 	}
