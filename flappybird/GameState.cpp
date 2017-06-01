@@ -9,6 +9,10 @@
 #include <iostream>
 
 namespace Sonar {
+	bool GameState::_bgameSoundLoaded;
+	sf::SoundBuffer GameState::_gameSoundBuffer;
+	sf::Sound GameState::_gameSound;
+
 	GameState::GameState(GameDataSptr data) : _data(data) {
 
 	}
@@ -22,6 +26,27 @@ namespace Sonar {
 	}
 
 	void GameState::Init() {
+		if (!_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH)) {
+			std::cout << "Error load hit sound effect" << std::endl;
+		}
+		if (!_wingSoundBuffer.loadFromFile(WING_SOUND_FILEPATH)) {
+			std::cout << "Error load hit sound effect" << std::endl;
+		}
+		if (!_pointSoundBuffer.loadFromFile(POINT_SOUND_FILEPATH)) {
+			std::cout << "Error load hit sound effect" << std::endl;
+		}
+
+		if (!GameState::_bgameSoundLoaded) {
+			if (!GameState::_gameSoundBuffer.loadFromFile(GAME_SOUND_FILEPATH)) {
+				std::cout << "Error load game sound effect" << std::endl;
+			}
+			GameState::_gameSound.setBuffer(_gameSoundBuffer);
+			GameState::_bgameSoundLoaded = true;
+		}
+
+		_hitSound.setBuffer(_hitSoundBuffer);
+		_wingSound.setBuffer(_wingSoundBuffer);
+		_pointSound.setBuffer(_pointSoundBuffer);
 
 		_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
@@ -59,8 +84,12 @@ namespace Sonar {
 
 			if (_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window)) {
 				if (GameStates::eGameOver != _gameState) {
+					if (GameStates::eReady == _gameState) {
+						_gameSound.play();
+					}
 					_gameState = GameStates::ePlaying;
 					bird->Tap();
+					_wingSound.play();
 				}
 			}
 		}
@@ -91,6 +120,8 @@ namespace Sonar {
 				if (collision.CheckSpriteCollision(bird->GetSprite(), 0.7f, l, 1.0f )) {
 					_gameState = GameStates::eGameOver;
 					_clock.restart();
+					_hitSound.play();
+					_gameSound.stop();
 				}
 			}
 
@@ -99,6 +130,8 @@ namespace Sonar {
 				if (collision.CheckSpriteCollision(bird->GetSprite(), 0.8f, p, 0.8f)) {
 					_gameState = GameStates::eGameOver;
 					_clock.restart();
+					_hitSound.play();
+					_gameSound.stop();
 				}
 			}
 
@@ -109,6 +142,7 @@ namespace Sonar {
 						_score++;
 						scoringSprites.erase(p);
 						hud->UpdateScore(_score);
+						_pointSound.play();
 					}
 				}
 			}

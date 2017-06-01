@@ -53,6 +53,8 @@ namespace Sonar {
 		_data->assets.LoadTexture("Gold Medal", GOLD_MEDAL_FILEPATH);
 		_data->assets.LoadTexture("Platinum Medal", PLATINUM_MEDAL_FILEPATH);
 
+		_data->assets.LoadTexture("Game Over Body", GAME_OVER_BODY_FILEPATH);
+
 		_background.setTexture(this->_data->assets.GetTexture("Game Over Background"));
 		_gameOverTitle.setTexture(this->_data->assets.GetTexture("Game Over Title"));
 		_gameOverContainer.setTexture(this->_data->assets.GetTexture("Game Over Body"));

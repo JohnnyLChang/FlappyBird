@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "State.hpp"
 #include "Game.hpp"
 #include "Pipe.hpp"
@@ -47,5 +48,17 @@ namespace Sonar {
 		bool _flahsOn;
 
 		int _score;
+
+		sf::SoundBuffer _hitSoundBuffer;
+		sf::SoundBuffer _wingSoundBuffer;
+		sf::SoundBuffer _pointSoundBuffer;
+
+		static bool _bgameSoundLoaded;
+		static sf::SoundBuffer _gameSoundBuffer;
+		static sf::Sound _gameSound;
+
+		sf::Sound _hitSound;
+		sf::Sound _wingSound;
+		sf::Sound _pointSound;
 	};
 }
