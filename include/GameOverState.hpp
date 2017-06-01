@@ -8,7 +8,7 @@
 namespace Sonar {
 	class GameOverState : public State {
 	public:
-		GameOverState(GameDataSptr data);
+		GameOverState(GameDataSptr data, int score);
 
 		void Init();
 
@@ -31,5 +31,10 @@ namespace Sonar {
 		sf::Sprite _gameOverContainer;
 		sf::Sprite _retryButton;
 
+		sf::Text _scoreText;
+		sf::Text _highScoreText;
+
+		int _score;
+		int _highScore;
 	};
 }

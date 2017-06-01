@@ -117,7 +117,7 @@ namespace Sonar {
 		if (GameStates::eGameOver == _gameState) {
 			flash->Show(dt);
 			if (_clock.getElapsedTime().asSeconds() > TIME_BEFORE_GAME_OVER_APPEARS) {
-				_data->machine.AddState(StateUptr(new GameOverState(_data)));
+				_data->machine.AddState(StateUptr(new GameOverState(_data, _score)));
 			}
 		}
 	}
