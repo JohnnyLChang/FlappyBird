@@ -39,6 +39,8 @@
 
 #define ROTATION_SPEED 100.0f
 
+#define FLASH_SPEED 1500.0f
+
 enum GameStates{
 	eReady,
 	ePlaying,

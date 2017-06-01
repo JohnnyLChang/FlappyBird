@@ -6,6 +6,7 @@
 #include "Pipe.hpp"
 #include "Land.hpp"
 #include "Bird.hpp"
+#include "Flash.hpp"
 #include "Collision.hpp"
 
 namespace Sonar {
@@ -35,8 +36,12 @@ namespace Sonar {
 
 		Land *land;
 		Bird *bird;
+		Flash *flash;
 		Collision collision;
 		
 		int _gameState;
+
+		sf::RectangleShape _gameOverFlash;
+		bool _flahsOn;
 	};
 }

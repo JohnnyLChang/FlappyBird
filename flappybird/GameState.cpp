@@ -22,7 +22,6 @@ namespace Sonar {
 	}
 
 	void GameState::Init() {
-		std::cout << "Game State" << std::endl;
 
 		_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
@@ -36,6 +35,7 @@ namespace Sonar {
 		pipe = new Pipe(_data);
 		land = new Land(_data);
 		bird = new Bird(_data);
+		flash = new Flash(_data);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 		_gameState = GameStates::eReady;
@@ -80,7 +80,6 @@ namespace Sonar {
 			std::vector<sf::Sprite> landSprites = land->GetSprites();
 			for (auto l : landSprites) {
 				if (collision.CheckSpriteCollision(bird->GetSprite(), 0.7f, l, 1.0f )) {
-					std::cout << "collision with land" << std::endl;
 					_gameState = GameStates::eGameOver;
 				}
 			}
@@ -92,6 +91,10 @@ namespace Sonar {
 				}
 			}
 		}
+
+		if (GameStates::eGameOver == _gameState) {
+			flash->Show(dt);
+		}
 	}
 
 	void GameState::Draw(float dt) {
@@ -101,7 +104,7 @@ namespace Sonar {
 		pipe->DrawPipes();
 		land->DrawLand();
 		bird->DrawBird();
-
+		flash->Draw();
 		_data->window.display();
 	}
 }

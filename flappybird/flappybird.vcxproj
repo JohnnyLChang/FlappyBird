@@ -157,6 +157,7 @@
     <ClInclude Include="..\include\Bird.hpp" />
     <ClInclude Include="..\include\Collision.hpp" />
     <ClInclude Include="..\include\DEFINITIONS.hpp" />
+    <ClInclude Include="..\include\Flash.hpp" />
     <ClInclude Include="..\include\Game.hpp" />
     <ClInclude Include="..\include\GameOverState.hpp" />
     <ClInclude Include="..\include\GameState.hpp" />
@@ -185,6 +186,7 @@
     <ClCompile Include="..\include\SplashState.cpp" />
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="Flash.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="GameState.cpp" />
