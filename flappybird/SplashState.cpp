@@ -9,7 +9,6 @@
 
 namespace Sonar {
 	SplashState::SplashState(GameDataSptr data) : _data(data) {
-
 	}
 
 	void SplashState::Pause() {
