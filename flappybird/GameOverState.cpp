@@ -1,5 +1,3 @@
-#pragma once
-
 #include <sstream>
 #include "GameOverState.hpp"
 #include "MainMenuState.hpp"

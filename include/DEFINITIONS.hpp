@@ -17,7 +17,7 @@
 #define PIPE_DOWN_FILEPATH "Resources/res/PipeDown.png"
 #define SCORING_PIPE_FILEPATH "Resources/res/InvisibleScoringPipe.png"
 
-#define LAND_FILEPATH "Resources/res/Land.png"
+#define LAND_FILEPATH "Resources/res/land.png"
 
 #define BIRD_FRAME_1_FILEPATH "Resources/res/bird-01.png"
 #define BIRD_FRAME_2_FILEPATH "Resources/res/bird-02.png"

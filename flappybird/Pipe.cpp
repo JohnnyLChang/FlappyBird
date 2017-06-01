@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Pipe.hpp"
 #include <cmath>
 #include <iostream>

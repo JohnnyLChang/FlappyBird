@@ -1,5 +1,3 @@
-#pragma once
-
 #include <sstream>
 #include "SplashState.hpp"
 #include "MainMenuState.hpp"
