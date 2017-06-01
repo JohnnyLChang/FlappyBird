@@ -6,6 +6,8 @@
 #include "DEFINITIONS.hpp"
 #include "GameState.hpp"
 #include <iostream>
+#include <fstream>
+
 
 namespace Sonar {
 	GameOverState::GameOverState(GameDataSptr data, int score) : _data(data), _score(score){
@@ -21,6 +23,27 @@ namespace Sonar {
 	}
 
 	void GameOverState::Init() {
+		std::ifstream readFile;
+		readFile.open("Resources/Highscore.txt");
+
+		if (readFile.is_open()) {
+			while (!readFile.eof()) {
+				readFile >> _highScore;
+			}
+		}
+
+
+		readFile.close();
+
+		std::ofstream writeFile("Resources/Highscore.txt");
+		if (writeFile.is_open()) {
+			if (_score > _highScore) {
+				writeFile << _score;
+				_highScore = _score;
+			}
+		}
+		writeFile.close();
+
 		_data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);
 		_data->assets.LoadTexture("Game Over Body", GAME_OVER_BODY_FILEPATH);
