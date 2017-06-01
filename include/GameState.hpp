@@ -7,6 +7,7 @@
 #include "Land.hpp"
 #include "Bird.hpp"
 #include "Flash.hpp"
+#include "HUD.hpp"
 #include "Collision.hpp"
 
 namespace Sonar {
@@ -37,6 +38,7 @@ namespace Sonar {
 		Land *land;
 		Bird *bird;
 		Flash *flash;
+		HUD *hud;
 		Collision collision;
 		
 		int _gameState;

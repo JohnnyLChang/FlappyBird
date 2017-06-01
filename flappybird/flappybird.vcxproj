@@ -161,6 +161,7 @@
     <ClInclude Include="..\include\Game.hpp" />
     <ClInclude Include="..\include\GameOverState.hpp" />
     <ClInclude Include="..\include\GameState.hpp" />
+    <ClInclude Include="..\include\HUD.hpp" />
     <ClInclude Include="..\include\Land.hpp" />
     <ClInclude Include="..\include\MainMenuState.hpp" />
     <ClInclude Include="..\include\Pipe.hpp" />
@@ -190,6 +191,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="HUD.cpp" />
     <ClCompile Include="Land.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
