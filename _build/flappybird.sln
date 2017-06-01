@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Flappy", "flappybird.vcxproj", "{46597A7B-CA4E-4A03-A1E5-5CF56BB913F7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlappyBird", "..\flappybird\flappybird.vcxproj", "{46597A7B-CA4E-4A03-A1E5-5CF56BB913F7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML_Template", "..\SFML_Template\SFML_Template.vcxproj", "{CF2E1968-9D0F-4783-8872-BA4199051A80}"
 EndProject
