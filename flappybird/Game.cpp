@@ -1,7 +1,6 @@
 // flappybird.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 #include <stdlib.h>
 #include "Game.hpp"
 #include "SplashState.hpp"

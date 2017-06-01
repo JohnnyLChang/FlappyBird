@@ -141,6 +141,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)..\SFML\SFML-2.4.2-32\include;$(SolutionDir)..\include;$(SolutionDir)..\</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -169,8 +170,6 @@
     <ClInclude Include="..\include\Pipe.hpp" />
     <ClInclude Include="..\include\SplashState.hpp" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\include\SplashState.cpp" />
@@ -188,12 +187,6 @@
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Pipe.cpp" />
     <ClCompile Include="StateMachine.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="5_Game.rc" />
