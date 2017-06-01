@@ -33,12 +33,30 @@ namespace Sonar {
 		//_pipeSprites.push_back(sprite);
 	}
 
+	void Pipe::SpawnScoringPipe() {
+		sf::Sprite sprite(_data->assets.GetTexture("Scoring Pipe"));
+		sprite.setPosition(_data->window.getSize().x, 0);
+
+		_pipeScoringSprites.push_back(sprite);
+	}
+
 	void Pipe::MovePipes(float dt) {
 		//for accurately move the pipes after out of screen 
 		for (auto p = _pipeSprites.begin(); p != _pipeSprites.end(); ++p) {
 			//sf::Vector2f position = p.getPosition();
 			if (p->getPosition().x < 0 - p->getGlobalBounds().width) {
 				_pipeSprites.erase(p);
+			}
+			else {
+				float movement = PIPE_MOVEMENT_SPEED * dt;
+				p->move(-movement, 0);
+			}
+		}
+
+		for (auto p = _pipeScoringSprites.begin(); p != _pipeScoringSprites.end(); ++p) {
+			//sf::Vector2f position = p.getPosition();
+			if (p->getPosition().x < 0 - p->getGlobalBounds().width) {
+				_pipeScoringSprites.erase(p);
 			}
 			else {
 				float movement = PIPE_MOVEMENT_SPEED * dt;
@@ -59,5 +77,9 @@ namespace Sonar {
 
 	const std::vector<sf::Sprite> &Pipe::GetSprites() const {
 		return _pipeSprites;
+	}
+
+	std::vector<sf::Sprite> &Pipe::GetScoringSprites() {
+		return _pipeScoringSprites;
 	}
 }
