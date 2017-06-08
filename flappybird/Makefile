@@ -10,7 +10,7 @@ SFMLLIB = ../SFML/SFML-2.4.2-Linux64/lib/
 #Headers and Includes
 LIB=-L../SFML/SFML-2.4.2-Linux64/lib
 INC=-I../SFML/SFML-2.4.2-Linux64/include -I../include
-DLIBS=-lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio 
+DLIBS=-lsfml-system -lsfml-window -lsfml-graphics -lsfml-audio
  
 # File names
 EXEC = flappybird
