@@ -299,7 +299,6 @@ __pycache__/
 #
 # Normal rules
 #
-.*
 *.o
 *.o.*
 *.a
