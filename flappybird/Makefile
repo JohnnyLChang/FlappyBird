@@ -1,6 +1,6 @@
 # Declaration of variables
-${CC := gcc}
-${CXX := g++}
+${CC := gcc-4.8}
+${CXX := g++-4.8}
 CXX_FLAGS = -Wall -std=c++0x
 
 MKDIR = mkdir -p
