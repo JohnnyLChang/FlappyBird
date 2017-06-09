@@ -20,3 +20,7 @@ compile:
     - cp SFML-2.4.2/lib/*.* SFML/SFML-2.4.2-Linux64/lib/
     - readelf -Ws ./SFML/SFML-2.4.2-Linux64/lib/libsfml-graphics.so | grep loadFromFile
     - export CC=gcc-4.8 && CXX=g++-4.8 && make -C flappybird/
+
+test:
+  override:
+    - echo "test"
