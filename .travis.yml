@@ -24,6 +24,15 @@ before_install:
   - eval "${MATRIX_EVAL}"
 
 script:
+  - sudo apt-get install libgl1-mesa-dev
+  - sudo apt-get install libx11-dev
+  - sudo apt-get install libxrandr-dev
+  - sudo apt-get install libfreetype6-dev
+  - sudo apt-get install libglew1.5-dev
+  - sudo apt-get install libjpeg8-dev
+  - sudo apt-get install libsndfile1-dev
+  - sudo apt-get install libopenal-dev
+  - sudo apt-get install libudev-dev
   - tar zxvf binutils-2.22.tar.gz
   - cd binutils-2.22
   - ./configure --with-sysroot
