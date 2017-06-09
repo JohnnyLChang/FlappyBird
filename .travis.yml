@@ -7,7 +7,6 @@ matrix:
   include:
     # works on Precise and Trusty
     - os: linux
-      dist: trusty
       sudo: required
       addons:
         apt:
