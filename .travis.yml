@@ -39,6 +39,6 @@ script:
   - make
   - sudo make install
   - cd ..
-  - cd SFML-2.4.2/ && cmake . && make
+  - cd SFML-2.4.2/ && cmake . && make && cd ..
   - cp SFML-2.4.2/lib/*.* SFML/SFML-2.4.2-Linux64/lib/
   - make -C flappybird/
