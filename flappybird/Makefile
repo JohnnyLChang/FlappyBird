@@ -1,6 +1,7 @@
 # Declaration of variables
-CC = g++
-CC_FLAGS = -Wall -Wa,-mrelax-relocations=no -std=c++0x
+${CC := gcc}
+${CXX := g++}
+CXX_FLAGS = -Wall -std=c++0x
 
 MKDIR = mkdir -p
 MV = mv
@@ -19,11 +20,11 @@ OBJECTS = $(SOURCES:.cpp=.o)
  
 # Main target
 $(EXEC): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $(EXEC) $(LIB) $(DLIBS)
+	$(CXX) $(OBJECTS) -o $(EXEC) $(LIB) $(DLIBS)
  
 # To obtain object files
 %.o: %.cpp
-	$(CC) $(INC) -c $(CC_FLAGS) $< -o $@
+	$(CXX) $(INC) -c $(CXX_FLAGS) $< -o $@
  
 install:
 	$(MKDIR) ../bin
