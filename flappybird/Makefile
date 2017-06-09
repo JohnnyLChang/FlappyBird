@@ -3,7 +3,7 @@ CC = gcc-4.8
 CXX = g++-4.8
 ${CC := gcc-4.8}
 ${CXX := g++-4.8}
-CXX_FLAGS = -Wall -std=c++0x
+CXX_FLAGS = -Wall -std=c++0x -D_GLIBCXX_USE_CXX11_ABI=0
 
 MKDIR = mkdir -p
 MV = mv
