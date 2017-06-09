@@ -14,6 +14,7 @@ install:
   # https://github.com/travis-ci-tester/travis-test-clang-cxx-11
   - sudo apt-get install libstdc++-4.8-dev
   - sudo apt-get install binutils
+  - sudo apt-get install binutils-dev
 
 script:
 - make -C flappybird/
