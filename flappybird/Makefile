@@ -1,6 +1,6 @@
 # Declaration of variables
 CC = g++
-CC_FLAGS = -Wall -std=c++0x
+CC_FLAGS = -Wall -Wa,-mrelax-relocations=no -std=c++0x
 
 MKDIR = mkdir -p
 MV = mv
