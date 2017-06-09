@@ -1,0 +1,7 @@
+dependencies:
+  override:
+    - make -C flappybird/
+    
+test:
+  
+checkout:
