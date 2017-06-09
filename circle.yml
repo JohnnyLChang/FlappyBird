@@ -4,6 +4,8 @@ dependencies:
     - sudo apt-get install g++-4.8
     - sudo apt-get install gcc-4.8
     - sudo apt-get install libstdc++-4.8-dev
+    - make -C SFML-2.4.2/
+    - cp SFML-2.4.2/lib/*.* SFML/SFML-2.4.2-Linux64/lib/
 
 compile:
   override:
