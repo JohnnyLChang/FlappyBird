@@ -22,8 +22,8 @@ matrix:
 
 before_install:
   - eval "${MATRIX_EVAL}"
-  - wget http://mirrors.kernel.org/ubuntu/pool/main/b/binutils-arm64-cross/binutils-aarch64-linux-gnu_2.24-1ubuntu1cross0.11_amd64.deb
-  - sudo dpkg -i binutils-aarch64-linux-gnu_2.24-1ubuntu1cross0.11_amd64.deb
 
 script:
+  - wget http://mirrors.kernel.org/ubuntu/pool/main/b/binutils-arm64-cross/binutils-aarch64-linux-gnu_2.24-1ubuntu1cross0.11_amd64.deb
+  - sudo dpkg -i binutils-aarch64-linux-gnu_2.24-1ubuntu1cross0.11_amd64.deb
   - make -C flappybird/
