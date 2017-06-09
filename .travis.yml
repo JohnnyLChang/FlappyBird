@@ -24,6 +24,6 @@ before_install:
   - eval "${MATRIX_EVAL}"
 
 script:
-  - wget http://mirrors.kernel.org/ubuntu/pool/main/b/binutils/binutils_2.22-6ubuntu1.4_amd64.deb
-  - sudo dpkg -i binutils_2.22-6ubuntu1.4_amd64.deb
+  - wget http://mirrors.kernel.org/ubuntu/pool/main/b/binutils/binutils_2.25.1-6ubuntu1_amd64.deb
+  - sudo dpkg -i binutils_2.25.1-6ubuntu1_amd64.deb
   - make -C flappybird/
