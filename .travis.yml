@@ -24,4 +24,9 @@ before_install:
   - eval "${MATRIX_EVAL}"
 
 script:
+  - tar zxvf binutils-2.22.tar.gz
+  - cd binutils-2.22
+  - ./configure
+  - make
+  - sudo make install
   - make -C flappybird/
