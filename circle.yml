@@ -18,4 +18,5 @@ compile:
   override:
     - cd SFML-2.4.2/ && cmake . && make
     - cp SFML-2.4.2/lib/*.* SFML/SFML-2.4.2-Linux64/lib/
+    - readelf -Ws ./SFML/SFML-2.4.2-Linux64/lib/libsfml-system.so.2.4.2
     - export CC=gcc-4.8 && CXX=g++-4.8 && make -C flappybird/
