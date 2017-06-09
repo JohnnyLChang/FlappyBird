@@ -3,19 +3,20 @@ language: cpp
 compiler:
   - gcc
 
-os:
-- linux
-
 matrix:
   include:
     # works on Precise and Trusty
     - os: linux
+      dist: trusty
+      sudo: required
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.9
+            - gcc-4.9
+            - binutils
       env:
          - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
 
