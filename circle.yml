@@ -16,9 +16,6 @@ dependencies:
 
 compile:
   override:
-    - cd SFML-2.4.2/
-    - cmake .
-    - make
-    - cd ..
+    - cd SFML-2.4.2/ && cmake . && make
     - cp SFML-2.4.2/lib/*.* SFML/SFML-2.4.2-Linux64/lib/
     - make -C flappybird/
