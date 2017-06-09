@@ -1,4 +1,6 @@
 # Declaration of variables
+CC = gcc-4.8
+CXX = g++-4.8
 ${CC := gcc-4.8}
 ${CXX := g++-4.8}
 CXX_FLAGS = -Wall -std=c++0x
